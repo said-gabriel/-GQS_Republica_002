@@ -1,18 +1,26 @@
 package model;
 
-class Endereco {
+public class  Endereco {
     private String bairro;
     private String rua;
-    private String num;
+    private int num;
     private String pontoRef;
     private String localGeo;
+    private String cidade;
+    private String estado;
+    
+    public Endereco(){
+        
+    }
 
-    public Endereco(String bairro, String rua, String num, String pontoRef, String localGeo) {
+    public Endereco(String bairro, String rua, int num, String pontoRef, String localGeo, String cidade, String estado) {
         this.bairro = bairro;
         this.rua = rua;
         this.num = num;
         this.pontoRef = pontoRef;
         this.localGeo = localGeo;
+        this.cidade = cidade;
+        this.estado = estado;
     }
 
     public String getBairro() {
@@ -31,11 +39,11 @@ class Endereco {
         this.rua = rua;
     }
 
-    public String getNum() {
+    public int getNum() {
         return num;
     }
 
-    public void setNum(String num) {
+    public void setNum(int num) {
         this.num = num;
     }
 
@@ -54,6 +62,21 @@ class Endereco {
     public void setLocalGeo(String localGeo) {
         this.localGeo = localGeo;
     }
-    
-    
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+        
 }

@@ -13,26 +13,39 @@ public class Republica {
     private Endereco endereco;
     private String cep;
     private String vantagens;
-    private int vagasTotal;
-    private int vagasDisponiveis;
-    private int vagasOcupadas;
+    private Vaga vagasTotal;
     private String codigoEtica;
     ArrayList<Morador> moradores;
-    private String representante;
+    private Representante representante;
+    private ArrayList<ReclamacaoSugestao> reclamacoes;
+    private ArrayList<Tarefa> tarefas;
+    private Financeiro financeiro;
+    
+    
 
     public Republica() {
     }
 
-    public Republica(String nome, LocalDate dataExtincao, Endereco endereco, String cep, String vantagens, int vagasTotal, Morador morador, String representante) {
+    public Republica(String nome,Endereco endereco, String cep, String vantagens, Vaga vagasTotal, Representante representante) {
         this.nome = nome;
-        this.dataExtincao = dataExtincao;
         this.endereco = endereco;
         this.cep = cep;
         this.vantagens = vantagens;
         this.vagasTotal = vagasTotal;
-        this.moradores.add(morador);
+        this.moradores = new ArrayList<>();
         this.dataFundacao = dataFundacao.now();
-        this.representante = morador.getNome();
+        this.representante = representante;
+        this.financeiro = new Financeiro();
+        this.tarefas = new ArrayList<>();
+        this.reclamacoes = new ArrayList<>();
+    }
+
+    public Vaga getVagasTotal() {
+        return vagasTotal;
+    }
+
+    public void setVagasTotal(Vaga vagasTotal) {
+        this.vagasTotal = vagasTotal;
     }
     
     public void terminarRepublica(){
@@ -47,11 +60,11 @@ public class Republica {
         }
     }
 
-    public String getRepresentante() {
+    public Representante getRepresentante() {
         return representante;
     }
 
-    public void setRepresentante(String representante) {
+    public void setRepresentante(Representante representante) {
         this.representante = representante;
     }
 
@@ -102,35 +115,6 @@ public class Republica {
     public void setVantagens(String vantagens) {
         this.vantagens = vantagens;
     }
-
-    public int getVagasTotal() {
-        return vagasTotal;
-    }
-
-    public void setVagasTotal(int vagasTotal) {
-        this.vagasTotal = vagasTotal;
-    }
-
-    public int getVagasDisponiveis() {
-        int x = this.getVagasTotal() - this.getMoradores().size();
-        setVagasDisponiveis(x);
-        return this.vagasDisponiveis;
-    }
-
-    private void setVagasDisponiveis(int vagasDisponiveis) {
-        this.vagasDisponiveis = vagasDisponiveis;
-    }
-
-    public int getVagasOcupadas() {
-        int x = this.getMoradores().size();
-        setVagasOcupadas(x);
-        return this.vagasOcupadas;
-    }
-
-    public void setVagasOcupadas(int vagasOcupadas) {
-        this.vagasOcupadas = vagasOcupadas;
-    }
-
     public String getCodigoEtica() {
         return codigoEtica;
     }

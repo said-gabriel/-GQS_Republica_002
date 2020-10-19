@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Tarefa {
@@ -14,8 +15,20 @@ public class Tarefa {
     public Tarefa(ArrayList<Morador> responsaveis, String descricao) {
         this.responsaveis = responsaveis;
         this.descricao = descricao;
-        this.dataAgendamento = dataAgendamento.now();
+        this.dataAgendamento = LocalDate.now();
         this.finalizada = false;
+    }
+
+    public void finalizar() {
+        LocalDate agora = LocalDate.now();
+        this.dataTermino = agora;
+    }
+
+    public double atraso() {
+        if (this.dataTermino.compareTo(dataAgendamento) < 0) {
+            long difEmDias = ChronoUnit.DAYS.between(this.dataTermino, this.dataAgendamento);
+        }
+        return 0;
     }
 
     public LocalDate getDataAgendamento() {

@@ -1,12 +1,12 @@
 package model;
 
-public class Vagas {
+public class Vaga {
 
     private int total;
     private int vagasOcupadas;
     private int vagasDisponiveis;
 
-    public Vagas(int total) {
+    public Vaga(int total) {
         this.total = total;
         this.vagasDisponiveis = total;
         this.vagasOcupadas = 0;

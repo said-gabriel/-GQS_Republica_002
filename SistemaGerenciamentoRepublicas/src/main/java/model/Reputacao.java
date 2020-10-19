@@ -16,17 +16,57 @@ public class Reputacao {
         this.totalDiasAtrasoPagamento = totalDiasAtrasoPagamento;
     }
 
-    private double reclamacoesIndice() {
+    public double reclamacoesIndice() {
         return this.totalReclamacoes / this.totalReclamacoesResolvidas;
     }
 
-    private double tarefasConcluidasIndice() {
+    public double tarefasConcluidasIndice() {
         return this.totalTarefasDadas / this.totalTarefasConcluidas;
     }
 
-    private double compromissoPagamento() {
+    public double compromissoPagamento() {
         double x = 10;
         return x / x + this.totalDiasAtrasoPagamento;
+    }
+
+    public int getTotalReclamacoes() {
+        return totalReclamacoes;
+    }
+
+    public void setTotalReclamacoes(int totalReclamacoes) {
+        this.totalReclamacoes = totalReclamacoes;
+    }
+
+    public int getTotalReclamacoesResolvidas() {
+        return totalReclamacoesResolvidas;
+    }
+
+    public void setTotalReclamacoesResolvidas(int totalReclamacoesResolvidas) {
+        this.totalReclamacoesResolvidas = totalReclamacoesResolvidas;
+    }
+
+    public int getTotalTarefasDadas() {
+        return totalTarefasDadas;
+    }
+
+    public void setTotalTarefasDadas(int totalTarefasDadas) {
+        this.totalTarefasDadas = totalTarefasDadas;
+    }
+
+    public int getTotalTarefasConcluidas() {
+        return totalTarefasConcluidas;
+    }
+
+    public void setTotalTarefasConcluidas(int totalTarefasConcluidas) {
+        this.totalTarefasConcluidas = totalTarefasConcluidas;
+    }
+
+    public int getTotalDiasAtrasoPagamento() {
+        return totalDiasAtrasoPagamento;
+    }
+
+    public void setTotalDiasAtrasoPagamento(int totalDiasAtrasoPagamento) {
+        this.totalDiasAtrasoPagamento = totalDiasAtrasoPagamento;
     }
 
 }

@@ -2,15 +2,14 @@ package model;
 
 import java.util.ArrayList;
 
-class HistoricoRepublica {
+public class HistoricoRepublica {
     private ArrayList<Republica> historico;
-    private String nomeRepublicas;
     private String representanteAtual;
     private String respresentanteAtualContato;
     private double mediaReputacao;
     
     public HistoricoRepublica(){
-        
+       this.historico = new ArrayList<>();
     }
 
     public ArrayList<Republica> getHistorico() {
@@ -19,14 +18,6 @@ class HistoricoRepublica {
 
     public void setHistorico(ArrayList<Republica> historico) {
         this.historico = historico;
-    }
-
-    public String getNomeRepublicas() {
-        return nomeRepublicas;
-    }
-
-    public void setNomeRepublicas(String nomeRepublicas) {
-        this.nomeRepublicas = nomeRepublicas;
     }
 
     public String getRepresentanteAtual() {

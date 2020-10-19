@@ -8,6 +8,7 @@ public class SemTeto {
     private String linkSociais;
     private String telResp1;
     private String telResp2;
+    
 
     public SemTeto(String nome, String apelido, String telefone, String linkSociais, String telResp1, String telResp2) {
         this.nome = nome;
@@ -17,7 +18,10 @@ public class SemTeto {
         this.telResp1 = telResp1;
         this.telResp2 = telResp2;
     }
-
+    public SemTeto(){
+        
+    }
+  
     public String getNome() {
         return nome;
     }

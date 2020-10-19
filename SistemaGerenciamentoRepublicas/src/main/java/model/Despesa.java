@@ -8,11 +8,11 @@ public class Despesa {
     private String descricao;
     private LocalDate vencimento;
     private double valor;
-    private int periodo;
+    private String periodo;
     private double valorParcela;
     private ArrayList<Morador> participantes;
 
-    public Despesa(String descricao, LocalDate vencimento, double valor, int periodo, double valorParcela, ArrayList<Morador> participantes) {
+    public Despesa(String descricao, LocalDate vencimento, double valor, String periodo, double valorParcela, ArrayList<Morador> participantes) {
         this.descricao = descricao;
         this.vencimento = vencimento;
         this.valor = valor;
@@ -20,7 +20,11 @@ public class Despesa {
         this.valorParcela = valorParcela;
         this.participantes = participantes;
     }
-
+    
+    public void rachaPercentual(){
+        
+    }
+    
     public String getDescricao() {
         return descricao;
     }
@@ -45,11 +49,11 @@ public class Despesa {
         this.valor = valor;
     }
 
-    public int getPeriodo() {
+    public String getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(int periodo) {
+    public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
 

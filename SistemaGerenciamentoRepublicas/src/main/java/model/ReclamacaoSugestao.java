@@ -1,6 +1,9 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReclamacaoSugestao {
 
@@ -14,6 +17,24 @@ public class ReclamacaoSugestao {
     public ReclamacaoSugestao(String descricao, Morador morador) {
         this.descricao = descricao;
         this.morador = morador;
+        this.excluida = false;
+        this.data = LocalDate.now();
+    }
+
+    public void solucionar() {
+        LocalDate agora = LocalDate.now();
+        this.dataSolucao = agora;    
+    }
+
+    public double atraso() {
+        if (this.dataSolucao.compareTo(data) < 0) {
+            long difEmDias = ChronoUnit.DAYS.between(this.dataSolucao, data);
+        }
+        return 0;
+    }
+
+    public void excluir() {
+        this.setExcluida(true);
     }
 
     public LocalDate getData() {

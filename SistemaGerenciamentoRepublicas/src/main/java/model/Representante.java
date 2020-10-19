@@ -6,12 +6,25 @@ public class Representante {
 
     private LocalDate dataInicio;
     private LocalDate dataFim;
+    private Morador representante;
 
-    public Representante(LocalDate dataInicio, LocalDate dataFim) {
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+    public Representante(Morador representante) {
+        this.dataInicio = LocalDate.now();
+        this.representante = representante;
+    }
+    
+    
+    
+    public Morador getRepresentante() {
+        return representante;
     }
 
+    public void setRepresentante(Morador representante) {
+        this.representante = representante;
+    }
+    
+    
+    
     public LocalDate getDataInicio() {
         return dataInicio;
     }
